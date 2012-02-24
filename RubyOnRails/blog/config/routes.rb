@@ -1,4 +1,8 @@
 Blog::Application.routes.draw do
+  resources :weblogs
+
+  resources :posts
+
   resources :users
 
   # The priority is based upon order of creation:

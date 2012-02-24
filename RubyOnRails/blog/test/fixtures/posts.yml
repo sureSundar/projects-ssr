@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  owner_id: 
+  subdomainurl: MyString
+  base-lang: MyString
+  region: MyString
+
+two:
+  owner_id: 
+  subdomainurl: MyString
+  base-lang: MyString
+  region: MyString

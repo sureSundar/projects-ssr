@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Subdomainurl</th>
+    <th>Baselang</th>
+    <th>Region</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weblogs.each do |weblog| %>
+  <tr>
+    <!--td><%= weblog.owner_id %></td-->
+    <td><%= weblog.subdomainurl %></td>
+    <td><%= weblog.baselang %></td>
+    <td><%= weblog.region %></td>
+    <td><%= link_to 'Show', weblog %></td>
+    <td><%= link_to 'Edit', edit_weblog_path(weblog) %></td>
+    <td><%= link_to 'Destroy', weblog, confirm: 'Are you sure?', method: :delete %></td>
+</tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Weblog', new_weblog_path %>
