@@ -13,8 +13,13 @@ class WeblogsController < ApplicationController
   # GET /weblogs.json
 
   def index
-    @weblogs = Weblog.all
-
+    
+	if (params[:user_id] != nil)
+		@weblogs = Weblog.find_all_by_owner_id(params[:user_id])
+	else
+		@weblogs = Weblog.all
+	end
+	
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @weblogs }
@@ -25,7 +30,7 @@ class WeblogsController < ApplicationController
   # GET /weblogs/1.json
   def show
     #@weblog = Weblog.findbyuser(params[:id])
-	@weblogs = Weblog.find_all_by_owner_id(params[:id])
+	@weblogs = Weblog.find_all_by_owner_id(current_user.id)
 
     respond_to do |format|
       format.html # show.html.erb

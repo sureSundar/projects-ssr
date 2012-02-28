@@ -1,4 +1,4 @@
-<h1>Listing users</h1>
+<h1>My Dashboard</h1>
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
@@ -13,16 +13,38 @@
   <tr>
     <td><%= user.username %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
+    <!--td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
     <td>
-	<%= link_to 'Blogs', weblog_path(user) %>
-	</td>
+	<%= link_to 'Blogs', user_weblogs_path(user) %>
+	</td -->
   </tr>
-<% end %>
+  <% end %>
 </table>
+<table>
+  <tr><br></tr>
+  <tr>
+    <th>Blogs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+	<th></th>
+	<th></th>
+  </tr>
+  <% @weblogs.each do |weblog| %>
+  <tr>  
+    <td><%= weblog.subdomainurl %></td>
+    <td><%= weblog.baselang %></td>
+    <td><%= weblog.region %></td>
+    <!--td><%= link_to 'Show', weblog %></td -->
+    <td><%= link_to 'configure', edit_weblog_path(weblog) %></td>
+    <!--td><%= link_to 'Destroy', weblog, confirm: 'Are you sure?', method: :delete %></td-->
+	<td><%= link_to 'Go', weblog_posts_url(weblog) %></td>
+  </tr>
+ <% end %>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<!-- %= link_to 'New User', new_user_path % -->

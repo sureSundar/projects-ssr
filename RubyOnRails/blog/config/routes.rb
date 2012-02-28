@@ -1,9 +1,13 @@
 Blog::Application.routes.draw do
-  resources :weblogs
+  resources :comments
 
   resources :posts
 
+  resources :weblogs
+
   resources :users
+  
+  resources :posts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -64,5 +68,19 @@ Blog::Application.routes.draw do
   resources :users, :user_sessions
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  #match 'postsbyblog/:wid' => 'posts#index', :as => :postsbyblog/:id  
   root :to => 'user_sessions#new', :as => :login
+  resources :users do
+	resources :weblogs 
+  end
+  resources :weblogs do
+	resources :posts		
+  end
+  resources :posts do
+	resources :comments
+  end
+  resources :comments do
+	resources :comments
+  end
+  
 end

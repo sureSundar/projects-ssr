@@ -1,4 +1,4 @@
-================================================================
+=========================================================================
 A)	Blog Application
 	URL 				:  blog.mysite.com
 	Business Partners	:  Looking for
@@ -7,9 +7,10 @@ A)	Blog Application
 	Developers			:  Needed
 	PMs					:  Needed
 	Idea				:  We have...
-================================================================
+	contact				:  suresundar@gmail.com
+=========================================================================
 Functional Requirements : 
-
+=========================================================================
 R10 : Each user should be able to create multiple Blogs.
 R20 : Each blog should be able to be viewed as suburls i.e user1.localhost:3000,user2.localhost:3000 by default 
   or in real world scenerio username.domain.com or blogname.domainname.com where blogname alone will change.
@@ -42,19 +43,22 @@ R150: Interfaces with Twitter,Facebook,Gmail,Ymail,LinkedIn,MySpace and any othe
 R160: Interfaces with any LDAP environment
 =========================================================================
 Database Design:
-
+=========================================================================
 R10.DD10 : Weblogs(id,owner_id,subdomainurl,baselang,region)
 R10.DD11 : Weblog.authors(blog_id,user_id)
 R10.DD12 : Weblog.moderator(blog_id,user_id)
 R10.DD13 : 
 
 =========================================================================
-
 Design : 
-
+=========================================================================
 D10 :  1.Authlogic implementation
 	   2.Create a scaffold of weblog as in DD10
-	   2.
-
-
-
+	   3.User should login and redirected to his Weblogs screen.
+	   4.
+	   
+=========================================================================
+Development
+=========================================================================
+Iteration 1 : Build a login,user,weblog,post,comments skeletons. - completed 2/26
+Iteration 2 :
