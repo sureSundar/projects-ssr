@@ -1,0 +1,65 @@
+=========================================================================
+A)	Blog Application
+	URL 				:  blog.mysite.com
+	Business Partners	:  Looking for
+	Type of Venture		:  Open Source
+	Architects			:  Needed
+	Developers			:  Needed
+	PMs					:  Needed
+	Idea				:  We have...
+	contact				:  suresundar@gmail.com
+=========================================================================
+Functional Requirements : 
+=========================================================================
+R10 : Each user should be able to create multiple Blogs.
+R20 : Each blog should be able to be viewed as suburls i.e user1.localhost:3000,user2.localhost:3000 by default 
+  or in real world scenerio username.domain.com or blogname.domainname.com where blogname alone will change.
+R30 : Blogs,Posts,Comments can be multilingual
+R40 : User should have authentication - Completed 2/24
+R50 : Each Post should have following fields
+	One Post to one user and one blog.
+	One Post to One title
+	One Post to One content
+	One Post to Multiple Comments on "Allow comment"
+	One Post to Multiple Labels
+	One post to Publish Method
+	
+R60: Each Comment should have following fields
+R70: Each Post should have Share link
+R80: Add Authors
+R90: Add Moderators
+R100: RSS feeds should be enabled
+R110: User should be able to configure following things
+	AutoSave option
+	Comment moderation
+	Comment moderation Settings
+	Who is following
+R120: Any user should be able to follow others based on "Allow Followers"
+R130: Post via email
+R140: Post via SMS
+
+R150: Interfaces with Twitter,Facebook,Gmail,Ymail,LinkedIn,MySpace and any other partners through Webservices.
+
+R160: Interfaces with any LDAP environment
+=========================================================================
+Database Design:
+=========================================================================
+R10.DD10 : Weblogs(id,owner_id,subdomainurl,baselang,region)
+R10.DD11 : Weblog.authors(blog_id,user_id)
+R10.DD12 : Weblog.moderator(blog_id,user_id)
+R10.DD13 : 
+
+=========================================================================
+Design : 
+=========================================================================
+D10 :  1.Authlogic implementation
+	   2.Create a scaffold of weblog as in DD10
+	   3.User should login and redirected to his Weblogs screen.
+	   4.
+	   
+=========================================================================
+Development
+=========================================================================
+Iteration 1 : Build a login,user,weblog,post,comments skeletons. - completed 2/26
+Iteration 2 :
+>>>>>>> 56b5d96c5fef87064ecddf6abf49e9230d89ba66

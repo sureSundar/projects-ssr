@@ -1,0 +1,31 @@
+<h1>Listing weblogs</h1>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <th>Subdomainurl</th>
+    <th>Baselang</th>
+    <th>Region</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weblogs.each do |weblog| %>
+  <tr>
+    <td><%= weblog.owner_id %></td>
+    <td><%= weblog.subdomainurl %></td>
+    <td><%= weblog.baselang %></td>
+    <td><%= weblog.region %></td>
+    <td><%= link_to 'Edit', edit_weblog_path(weblog) %></td>
+    <td><%= link_to 'Destroy', weblog, confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= link_to 'View', weblog_posts_url(weblog) %></td>
+	<td><%= link_to 'New Posts', new_posts_path(weblog) %></td>
+   </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Weblog', new_weblog_path %>
+

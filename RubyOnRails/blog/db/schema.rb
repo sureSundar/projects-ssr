@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120223162022) do
+ActiveRecord::Schema.define(:version => 20120226063648) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ppost_id"
+    t.integer  "pc_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "weblog_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_sessions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -19,6 +41,24 @@ ActiveRecord::Schema.define(:version => 20120223162022) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "we_blogs", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "subdomainurl"
+    t.string   "baselang"
+    t.string   "region"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "weblogs", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "subdomainurl"
+    t.string   "baselang"
+    t.string   "region"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

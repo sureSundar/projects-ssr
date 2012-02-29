@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-
-    respond_to do |format|
+    #@users = User.all	
+	@users 	 = User.find_all_by_id(current_user.id)
+	@weblogs = Weblog.find_all_by_owner_id(current_user.id)
+	respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
     end
