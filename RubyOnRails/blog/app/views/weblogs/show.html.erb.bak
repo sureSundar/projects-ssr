@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>id</th>
+    <th>owner_id</th>
+    <th>Subdomainurl</th>
+    <th>Baselang</th>
+    <th>Region</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= @weblog.id %></td>
+    <td><%= @weblog.owner_id %></td>
+    <td><%= @weblog.subdomainurl %></td>
+    <td><%= @weblog.baselang %></td>
+    <td><%= @weblog.region %></td>
+    <td><%= link_to 'Edit', edit_weblog_path(@weblog) %></td>
+    <td><%= link_to 'New Post', new_weblog_post_path(@weblog) %></td>
+    <!-- td><%= link_to 'Destroy', @weblog, confirm: 'Are you sure?', method: :delete %></td -->
+  </tr>
+  </table>
+  <table>
+  <% for post in @weblog.posts %>
+    <tr>
+	<th><%= h post.title %></th>
+    </tr>
+    <tr>
+	<td width='75%'><%= post.content %></td>
+	<td width='20%'><%= link_to 'Comments', post_comments_path(post) %></td>
+	<td width='5%'><%= link_to 'X', post, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+    <td><%= link_to 'New Post', new_weblog_post_path(@weblog) %></td>
+  
+</table>
+
+<br />
+
+<!-- %= link_to 'New Weblog', new_user_weblog_path(current_user.id) % -->

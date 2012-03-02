@@ -30,9 +30,10 @@ class WeblogsController < ApplicationController
   # GET /weblogs/1.json
   def show
     #@weblog = Weblog.findbyuser(params[:id])
-	@weblogs = Weblog.find_all_by_owner_id(current_user.id)
+    @weblog = Weblog.find(params[:id])
 
     respond_to do |format|
+      format.js
       format.html # show.html.erb
       format.json { render json: @weblog }
     end
@@ -40,8 +41,14 @@ class WeblogsController < ApplicationController
 
   # GET /weblogs/new
   # GET /weblogs/new.json
+
   def new
-    @weblog = Weblog.new
+    if (params[:id] !=nil)
+        @weblog = Weblog.new
+	@weblog.owner_id = params[:id];
+    else
+	@weblog = Weblog.new
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -58,7 +65,7 @@ class WeblogsController < ApplicationController
   # POST /weblogs.json
   def create
     @weblog = Weblog.new(params[:weblog])
-
+    @weblog.owner_id = current_user.id
     respond_to do |format|
       if @weblog.save
         format.html { redirect_to @weblog, notice: 'Weblog was successfully created.' }
@@ -74,7 +81,7 @@ class WeblogsController < ApplicationController
   # PUT /weblogs/1.json
   def update
     @weblog = Weblog.find(params[:id])
-
+    @weblog.owner_id = current_user.id
     respond_to do |format|
       if @weblog.update_attributes(params[:weblog])
         format.html { redirect_to @weblog, notice: 'Weblog was successfully updated.' }

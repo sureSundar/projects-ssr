@@ -1,0 +1,108 @@
+            comments GET    /comments(.:format)                               {:action=>"index", :controller=>"comments"}
+                     POST   /comments(.:format)                               {:action=>"create", :controller=>"comments"}
+         new_comment GET    /comments/new(.:format)                           {:action=>"new", :controller=>"comments"}
+        edit_comment GET    /comments/:id/edit(.:format)                      {:action=>"edit", :controller=>"comments"}
+             comment GET    /comments/:id(.:format)                           {:action=>"show", :controller=>"comments"}
+                     PUT    /comments/:id(.:format)                           {:action=>"update", :controller=>"comments"}
+                     DELETE /comments/:id(.:format)                           {:action=>"destroy", :controller=>"comments"}
+               posts GET    /posts(.:format)                                  {:action=>"index", :controller=>"posts"}
+                     POST   /posts(.:format)                                  {:action=>"create", :controller=>"posts"}
+            new_post GET    /posts/new(.:format)                              {:action=>"new", :controller=>"posts"}
+           edit_post GET    /posts/:id/edit(.:format)                         {:action=>"edit", :controller=>"posts"}
+                post GET    /posts/:id(.:format)                              {:action=>"show", :controller=>"posts"}
+                     PUT    /posts/:id(.:format)                              {:action=>"update", :controller=>"posts"}
+                     DELETE /posts/:id(.:format)                              {:action=>"destroy", :controller=>"posts"}
+             weblogs GET    /weblogs(.:format)                                {:action=>"index", :controller=>"weblogs"}
+                     POST   /weblogs(.:format)                                {:action=>"create", :controller=>"weblogs"}
+          new_weblog GET    /weblogs/new(.:format)                            {:action=>"new", :controller=>"weblogs"}
+         edit_weblog GET    /weblogs/:id/edit(.:format)                       {:action=>"edit", :controller=>"weblogs"}
+              weblog GET    /weblogs/:id(.:format)                            {:action=>"show", :controller=>"weblogs"}
+                     PUT    /weblogs/:id(.:format)                            {:action=>"update", :controller=>"weblogs"}
+                     DELETE /weblogs/:id(.:format)                            {:action=>"destroy", :controller=>"weblogs"}
+               users GET    /users(.:format)                                  {:action=>"index", :controller=>"users"}
+                     POST   /users(.:format)                                  {:action=>"create", :controller=>"users"}
+            new_user GET    /users/new(.:format)                              {:action=>"new", :controller=>"users"}
+           edit_user GET    /users/:id/edit(.:format)                         {:action=>"edit", :controller=>"users"}
+                user GET    /users/:id(.:format)                              {:action=>"show", :controller=>"users"}
+                     PUT    /users/:id(.:format)                              {:action=>"update", :controller=>"users"}
+                     DELETE /users/:id(.:format)                              {:action=>"destroy", :controller=>"users"}
+                     GET    /posts(.:format)                                  {:action=>"index", :controller=>"posts"}
+                     POST   /posts(.:format)                                  {:action=>"create", :controller=>"posts"}
+                     GET    /posts/new(.:format)                              {:action=>"new", :controller=>"posts"}
+                     GET    /posts/:id/edit(.:format)                         {:action=>"edit", :controller=>"posts"}
+                     GET    /posts/:id(.:format)                              {:action=>"show", :controller=>"posts"}
+                     PUT    /posts/:id(.:format)                              {:action=>"update", :controller=>"posts"}
+                     DELETE /posts/:id(.:format)                              {:action=>"destroy", :controller=>"posts"}
+                     GET    /users(.:format)                                  {:action=>"index", :controller=>"users"}
+                     POST   /users(.:format)                                  {:action=>"create", :controller=>"users"}
+                     GET    /users/new(.:format)                              {:action=>"new", :controller=>"users"}
+                     GET    /users/:id/edit(.:format)                         {:action=>"edit", :controller=>"users"}
+                     GET    /users/:id(.:format)                              {:action=>"show", :controller=>"users"}
+                     PUT    /users/:id(.:format)                              {:action=>"update", :controller=>"users"}
+                     DELETE /users/:id(.:format)                              {:action=>"destroy", :controller=>"users"}
+       user_sessions GET    /user_sessions(.:format)                          {:action=>"index", :controller=>"user_sessions"}
+                     POST   /user_sessions(.:format)                          {:action=>"create", :controller=>"user_sessions"}
+    new_user_session GET    /user_sessions/new(.:format)                      {:action=>"new", :controller=>"user_sessions"}
+   edit_user_session GET    /user_sessions/:id/edit(.:format)                 {:action=>"edit", :controller=>"user_sessions"}
+        user_session GET    /user_sessions/:id(.:format)                      {:action=>"show", :controller=>"user_sessions"}
+                     PUT    /user_sessions/:id(.:format)                      {:action=>"update", :controller=>"user_sessions"}
+                     DELETE /user_sessions/:id(.:format)                      {:action=>"destroy", :controller=>"user_sessions"}
+               login        /login(.:format)                                  {:action=>"new", :controller=>"user_sessions"}
+              logout        /logout(.:format)                                 {:action=>"destroy", :controller=>"user_sessions"}
+               login        /                                                 {:controller=>"user_sessions", :action=>"new"}
+        user_weblogs GET    /users/:user_id/weblogs(.:format)                 {:action=>"index", :controller=>"weblogs"}
+                     POST   /users/:user_id/weblogs(.:format)                 {:action=>"create", :controller=>"weblogs"}
+     new_user_weblog GET    /users/:user_id/weblogs/new(.:format)             {:action=>"new", :controller=>"weblogs"}
+    edit_user_weblog GET    /users/:user_id/weblogs/:id/edit(.:format)        {:action=>"edit", :controller=>"weblogs"}
+         user_weblog GET    /users/:user_id/weblogs/:id(.:format)             {:action=>"show", :controller=>"weblogs"}
+                     PUT    /users/:user_id/weblogs/:id(.:format)             {:action=>"update", :controller=>"weblogs"}
+                     DELETE /users/:user_id/weblogs/:id(.:format)             {:action=>"destroy", :controller=>"weblogs"}
+                     GET    /users(.:format)                                  {:action=>"index", :controller=>"users"}
+                     POST   /users(.:format)                                  {:action=>"create", :controller=>"users"}
+                     GET    /users/new(.:format)                              {:action=>"new", :controller=>"users"}
+                     GET    /users/:id/edit(.:format)                         {:action=>"edit", :controller=>"users"}
+                     GET    /users/:id(.:format)                              {:action=>"show", :controller=>"users"}
+                     PUT    /users/:id(.:format)                              {:action=>"update", :controller=>"users"}
+                     DELETE /users/:id(.:format)                              {:action=>"destroy", :controller=>"users"}
+        weblog_posts GET    /weblogs/:weblog_id/posts(.:format)               {:action=>"index", :controller=>"posts"}
+                     POST   /weblogs/:weblog_id/posts(.:format)               {:action=>"create", :controller=>"posts"}
+     new_weblog_post GET    /weblogs/:weblog_id/posts/new(.:format)           {:action=>"new", :controller=>"posts"}
+    edit_weblog_post GET    /weblogs/:weblog_id/posts/:id/edit(.:format)      {:action=>"edit", :controller=>"posts"}
+         weblog_post GET    /weblogs/:weblog_id/posts/:id(.:format)           {:action=>"show", :controller=>"posts"}
+                     PUT    /weblogs/:weblog_id/posts/:id(.:format)           {:action=>"update", :controller=>"posts"}
+                     DELETE /weblogs/:weblog_id/posts/:id(.:format)           {:action=>"destroy", :controller=>"posts"}
+                     GET    /weblogs(.:format)                                {:action=>"index", :controller=>"weblogs"}
+                     POST   /weblogs(.:format)                                {:action=>"create", :controller=>"weblogs"}
+                     GET    /weblogs/new(.:format)                            {:action=>"new", :controller=>"weblogs"}
+                     GET    /weblogs/:id/edit(.:format)                       {:action=>"edit", :controller=>"weblogs"}
+                     GET    /weblogs/:id(.:format)                            {:action=>"show", :controller=>"weblogs"}
+                     PUT    /weblogs/:id(.:format)                            {:action=>"update", :controller=>"weblogs"}
+                     DELETE /weblogs/:id(.:format)                            {:action=>"destroy", :controller=>"weblogs"}
+       post_comments GET    /posts/:post_id/comments(.:format)                {:action=>"index", :controller=>"comments"}
+                     POST   /posts/:post_id/comments(.:format)                {:action=>"create", :controller=>"comments"}
+    new_post_comment GET    /posts/:post_id/comments/new(.:format)            {:action=>"new", :controller=>"comments"}
+   edit_post_comment GET    /posts/:post_id/comments/:id/edit(.:format)       {:action=>"edit", :controller=>"comments"}
+        post_comment GET    /posts/:post_id/comments/:id(.:format)            {:action=>"show", :controller=>"comments"}
+                     PUT    /posts/:post_id/comments/:id(.:format)            {:action=>"update", :controller=>"comments"}
+                     DELETE /posts/:post_id/comments/:id(.:format)            {:action=>"destroy", :controller=>"comments"}
+                     GET    /posts(.:format)                                  {:action=>"index", :controller=>"posts"}
+                     POST   /posts(.:format)                                  {:action=>"create", :controller=>"posts"}
+                     GET    /posts/new(.:format)                              {:action=>"new", :controller=>"posts"}
+                     GET    /posts/:id/edit(.:format)                         {:action=>"edit", :controller=>"posts"}
+                     GET    /posts/:id(.:format)                              {:action=>"show", :controller=>"posts"}
+                     PUT    /posts/:id(.:format)                              {:action=>"update", :controller=>"posts"}
+                     DELETE /posts/:id(.:format)                              {:action=>"destroy", :controller=>"posts"}
+    comment_comments GET    /comments/:comment_id/comments(.:format)          {:action=>"index", :controller=>"comments"}
+                     POST   /comments/:comment_id/comments(.:format)          {:action=>"create", :controller=>"comments"}
+ new_comment_comment GET    /comments/:comment_id/comments/new(.:format)      {:action=>"new", :controller=>"comments"}
+edit_comment_comment GET    /comments/:comment_id/comments/:id/edit(.:format) {:action=>"edit", :controller=>"comments"}
+     comment_comment GET    /comments/:comment_id/comments/:id(.:format)      {:action=>"show", :controller=>"comments"}
+                     PUT    /comments/:comment_id/comments/:id(.:format)      {:action=>"update", :controller=>"comments"}
+                     DELETE /comments/:comment_id/comments/:id(.:format)      {:action=>"destroy", :controller=>"comments"}
+                     GET    /comments(.:format)                               {:action=>"index", :controller=>"comments"}
+                     POST   /comments(.:format)                               {:action=>"create", :controller=>"comments"}
+                     GET    /comments/new(.:format)                           {:action=>"new", :controller=>"comments"}
+                     GET    /comments/:id/edit(.:format)                      {:action=>"edit", :controller=>"comments"}
+                     GET    /comments/:id(.:format)                           {:action=>"show", :controller=>"comments"}
+                     PUT    /comments/:id(.:format)                           {:action=>"update", :controller=>"comments"}
+                     DELETE /comments/:id(.:format)                           {:action=>"destroy", :controller=>"comments"}

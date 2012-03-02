@@ -1,4 +1,4 @@
-<%= form_for(@post, :url => posts_path(params[:weblog_id])) do |f| %>
+<%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,8 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+	<%= debug @post %>
     <div class="field">
+    <%= hidden_field_tag(:weblog_id, @post.weblog_id) %>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>

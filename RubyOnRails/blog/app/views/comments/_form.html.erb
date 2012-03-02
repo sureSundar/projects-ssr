@@ -23,6 +23,8 @@
     <%= f.label :pc_id %><br />
     <%= f.number_field :pc_id %>
 </div-->
+ <%= hidden_field_tag(:ppost_id, @comment.ppost_id) %>
+ <%= debug @comment %>
   <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_area :comment %>

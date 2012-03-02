@@ -63,3 +63,9 @@ Development
 Iteration 1 : Build a login,user,weblog,post,comments skeletons. - completed 2/26
 Iteration 2 :
 
+=========================================================================
+Issues :
+=========================================================================
+
+Issue 1 : [2/29/2012] Facing challenges in creating associations among models in view.
+

@@ -1,0 +1,9 @@
+<p>
+  <%= f.subdomainurl %><br />
+  <%= f.region %><br />
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Delete" %>
+</p>
+<%= f.fields_for :answers do |builder| %>
+  <%= render 'answer_fields', :f => builder %>
+<% end %>

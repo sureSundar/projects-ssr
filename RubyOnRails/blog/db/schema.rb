@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(:version => 20120226063648) do
     t.datetime "updated_at"
   end
 
-  create_table "we_blogs", :force => true do |t|
-    t.integer  "owner_id"
-    t.string   "subdomainurl"
-    t.string   "baselang"
-    t.string   "region"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "weblogs", :force => true do |t|
     t.integer  "owner_id"
     t.string   "subdomainurl"

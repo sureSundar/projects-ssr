@@ -62,4 +62,10 @@ Development
 =========================================================================
 Iteration 1 : Build a login,user,weblog,post,comments skeletons. - completed 2/26
 Iteration 2 :
->>>>>>> 56b5d96c5fef87064ecddf6abf49e9230d89ba66
+
+=========================================================================
+Issues :
+=========================================================================
+
+Issue 1 : Facing challenges in creating associations among models in view.
+

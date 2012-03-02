@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-	#@posts = Post.all
+	@posts = Post.all
 	if (params[:weblog_id] != nil)
 			@posts = Post.find_all_by_weblog_id(params[:weblog_id])
 	else
@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.weblog_id = params[:weblog_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,10 +50,12 @@ class PostsController < ApplicationController
   def create
     #@post = Post.new(params[:post])
 	@post = Post.new(params[:post])
-	@post.weblog = Weblog.find(params[:weblog_id])
-	respond_to do |format|
+	@post.weblog_id = params[:weblog_id]
+
+      respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        #format.html {redirect_to @post.weblog_path, notice: 'Post was successfully created.' }
+	format.html {redirect_to weblog_path(@post.weblog_id), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
