@@ -1,18 +1,7 @@
 class WeblogsController < ApplicationController
   # GET /weblogs
   # GET /weblogs.json
-  def weblogindexbyuser
-    @weblog = Weblog.find(@user_session.id)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @weblogs }
-    end
-  end
-
-  # GET /weblogs
-  # GET /weblogs.json
-
-  def index
+   def index
     
 	if (params[:user_id] != nil)
 		@weblogs = Weblog.find_all_by_owner_id(params[:user_id])

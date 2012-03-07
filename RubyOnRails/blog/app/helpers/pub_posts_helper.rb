@@ -1,0 +1,2 @@
+module PubPostsHelper
+end

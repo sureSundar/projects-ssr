@@ -13,6 +13,7 @@
 
 <% @comments.each do |comment| %>
   <tr>
+    <td><%= comment.id %></td>
     <td><%= comment.user_id %></td>
     <td><%= comment.ppost_id %></td>
     <td><%= comment.pc_id %></td>

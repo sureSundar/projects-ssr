@@ -29,9 +29,13 @@ class SurveysController < ApplicationController
       question = @survey.questions.build
         4.times { question.answers.build }
     end
+	
 
     logger.info "survey object : ";
     logger.info @survey.questions.size
+	logger.info "Answer object : ";
+    logger.info @survey.questions[1].answers.size
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @survey.questions }

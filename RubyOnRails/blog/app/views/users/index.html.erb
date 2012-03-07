@@ -24,7 +24,7 @@
   <table>
   <tr><br></tr>
   <tr>
-    <th>Blogs</th>
+    <th>Your Blogs</th>
     <th></th>
     <th></th>
     <th></th>
@@ -46,5 +46,28 @@
   <% end %>
 </table>
 <br />
+<tr>
+    <th>Other's Blogs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <ol>
+  <% for weblog in Weblog.find(:all) 
+	if (weblog.owner_id != current_user.id) %> 
+	<tr>
+	<td>
+	   <%= h weblog.subdomainurl %>
+	</td>
+	<td>
+	   <%= link_to "Go",weblog_path(weblog.id) %> </td>
+	 </td>
+     </tr>
+	<% end %>
+  <% end %>
+ </table>
 <br />
 

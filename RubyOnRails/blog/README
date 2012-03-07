@@ -67,9 +67,12 @@ Iteration 2 :
 Issues :
 =========================================================================
 
-Issue 1 : [2/29/2012] Facing challenges in creating associations among models in view.
+Issue 1 : [2/29/2012] Facing challenges in creating associations among models in view - Completed
+Issue 2 : [3/7/2012] Facing the following issue in multi user post submision in creating posts -
+					 Any user should be able to see any blog,whereas only the authors can submit posts and moderators can publish it.
 
 =========================================================================
 Build Details:
 =========================================================================
 3/2/2012 - Build1 - Completed login,Weblog,Post,comment skeleton.
+3/7/2012 - Build2 - Complete nested comments and other blogs(need little rework)

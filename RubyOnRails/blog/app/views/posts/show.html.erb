@@ -7,18 +7,23 @@
 
 <p>
   <b>Content:</b>
+  <pre>
   <%= @post.content %>
+  </pre>
+  <%= link_to ':<',new_post_comment_path(@post) %>
 </p>
 
 <p>
+  <pre>
   <b>Comments:</b>
-  <% for commentObj in @post.comments %>
-  <p>
-    <%= commentObj.comment %>
-    </p>
+  
+  <% for commentObj in @post.comments do %>
+	<% if (commentObj.pc_id == nil ) %>
+		<%= display_comments(commentObj) %>
+	<% end %>
   <% end %>
-</p>
-<%= link_to 'New Comment', new_post_comment_path(@post) %> 
-
-<!-- %= link_to 'Edit', edit_post_path(@post.weblog,@post) %> |
+  </pre>
+<p> 
+  
+<!-- %= link_to 'Edit', edit_post_path(@post.weblog,@post) %>
 <%= link_to 'Back', posts_path(@post.weblog) % -->
