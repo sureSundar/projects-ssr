@@ -12,23 +12,31 @@ A)	Blog Application
 Functional Requirements : 
 =========================================================================
 R10 : Each user should be able to create multiple Blogs.
-R20 : Each blog should be able to be viewed as suburls i.e user1.localhost:3000,user2.localhost:3000 by default 
-  or in real world scenerio username.domain.com or blogname.domainname.com where blogname alone will change.
-R30 : Blogs,Posts,Comments can be multilingual
+R11 : Each blog can have more than one authors.
+R12 : Each blog can have more than one Moderators.
+R13 : Each user can play different roles like owner,author,Post Moderator,Comment Moderator etc
+R20 : Each blog should be able to be viewed as suburls blogname.domainname.com where blogname alone  will change.
+R30 : Blogs,Posts,Comments shall be multilingual
 R40 : User should have authentication - Completed 2/24
 R50 : Each Post should have following fields
 	One Post to one user and one blog.
+	Authors can edit a post/Collaborate till it gets published.
 	One Post to One title
 	One Post to One content
 	One Post to Multiple Comments on "Allow comment"
 	One Post to Multiple Labels
 	One post to Publish Method
-	
+	Posts can be previewed in user set preview-domain till it is published.	
 R60: Each Comment should have following fields
+      Comment Title
+      Comment text
+      Comment user
+      delete button
+      More comment(:<)button
 R70: Each Post should have Share link
-R80: Add Authors
-R90: Add Moderators
-R100: RSS feeds should be enabled
+R80: Each blog should have Add Authors functionality
+R90: Each blog shouldd have Add Moderators functionality
+R100: Each blog should have RSS feeds functionality.
 R110: User should be able to configure following things
 	AutoSave option
 	Comment moderation
@@ -45,9 +53,18 @@ R160: Interfaces with any LDAP environment
 Database Design:
 =========================================================================
 R10.DD10 : Weblogs(id,owner_id,subdomainurl,baselang,region)
-R10.DD11 : Weblog.authors(blog_id,user_id)
-R10.DD12 : Weblog.moderator(blog_id,user_id)
-R10.DD13 : 
+R11.DD11 : Weblog.authors(blog_id,user_id)
+R12.DD12 : Weblog.moderator(blog_id,user_id)
+R13.DD13 : Users
+	 : Weblogs
+	 : Comments
+	 : Posts
+	 : Authors
+	 : Moderators
+	 : Weblogs.authors
+	 : Weblogs.moderators
+	 : Weblogs.owners	 
+R13.
 
 =========================================================================
 Design : 

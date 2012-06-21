@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<table>
+<table border="1 px;">
   <tr>
     <th>id</th>
     <th>owner_id</th>
